@@ -4,6 +4,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import org.xiexh.appcore.xmlparser.DomParserTest;
+import org.xiexh.appcore.xmlparser.PrintRivers;
+import org.xiexh.appcore.xmlparser.PullPraserTest;
+import org.xiexh.appcore.xmlparser.SAXParserTest;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +16,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//      DomParserTest dom = new DomParserTest();
+//        SAXParserTest sax = new SAXParserTest();
+        PullPraserTest pull = new PullPraserTest();
+        PrintRivers.print(pull.getRiversFromXml("river.xml"));
     }
 
 
